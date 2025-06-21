@@ -5,7 +5,7 @@ function MyBookings() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/mybookings", {
+    fetch("https://stayfinder-d8vb.onrender.com/mybookings", {
       method: "GET",
       credentials: "include",
     })
