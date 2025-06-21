@@ -8,7 +8,7 @@ function Home() {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:8000/showlisting")
+    fetch("https://stayfinder-d8vb.onrender.com/showlisting")
       .then((res) => res.json())
       .then((data) => setListings(data.listings))
       .catch((err) => console.error("Fetch error:", err));
