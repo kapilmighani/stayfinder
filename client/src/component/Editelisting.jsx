@@ -15,7 +15,7 @@ function Editlisting() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:8000/listing/${id}`)
+    fetch(`https://stayfinder-d8vb.onrender.com/listing/${id}`)
       .then((res) => res.json())
       .then((data) => setForm(data.listing))
       .catch((err) => console.error("Fetch error:", err));
@@ -28,7 +28,7 @@ function Editlisting() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`http://localhost:8000/updatelisting/${id}`, {
+    const res = await fetch(`https://stayfinder-d8vb.onrender.com/updatelisting/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
