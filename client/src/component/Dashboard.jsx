@@ -12,7 +12,7 @@ function Dashboard() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:8000/mylisting", {
+    fetch("https://stayfinder-d8vb.onrender.com/mylisting", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8000/deletelisting/${id}`, {
+      const res = await fetch(`https://stayfinder-d8vb.onrender.com/deletelisting/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
