@@ -13,7 +13,7 @@ function Navbar() {
   if (loading) return null;
 
   const handleLogout = async () => {
-    await fetch("http://localhost:8000/logout", {
+    await fetch("https://stayfinder-d8vb.onrender.com/logout", {
       method: "GET",
       credentials: "include",
     });
