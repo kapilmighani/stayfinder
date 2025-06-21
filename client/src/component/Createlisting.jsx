@@ -39,7 +39,7 @@ function Createlisting() {
     form.append("image", imageFile);
 
     try {
-      const res = await fetch("http://localhost:8000/createlisting", {
+      const res = await fetch("https://stayfinder-d8vb.onrender.com/createlisting", {
         method: "POST",
         body: form,
         credentials: "include",
