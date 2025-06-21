@@ -10,7 +10,7 @@ function Booking() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/listing/${listingId}`)
+    fetch(`https://stayfinder-d8vb.onrender.com/listing/${listingId}`)
       .then((res) => res.json())
       .then((data) => setListing(data.listing))
       .catch((err) => console.error("Failed to load listing:", err));
@@ -40,7 +40,7 @@ function Booking() {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/bookings", {
+      const response = await fetch("https://stayfinder-d8vb.onrender.com/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
