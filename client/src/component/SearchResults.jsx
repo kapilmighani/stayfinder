@@ -6,7 +6,7 @@ function SearchResults() {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/search${search}`)
+    fetch(`https://stayfinder-d8vb.onrender.com/search${search}`)
       .then(res => res.json())
       .then(data => setListings(data.listings || []))
       .catch(err => console.error("Search error:", err));
