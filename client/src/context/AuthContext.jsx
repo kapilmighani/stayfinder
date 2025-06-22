@@ -10,17 +10,19 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://stayfinder-d8vb.onrender.com/auth/check-auth", {
-          credentials: "include",
-        });
-        const data = await res.json();
-        if (data.authenticated) {
-          setIsLoggedIn(true);
-          setRole(data.role);
-        } else {
-          setIsLoggedIn(false);
-          setRole("");
-        }
+        // const res = await fetch("https://stayfinder-d8vb.onrender.com/auth/check-auth", {
+        //   credentials: "include",
+        // });
+        // const data = await res.json();
+        // if (data.authenticated) {
+        //   setIsLoggedIn(true);
+        //   setRole(data.role);
+        // } else {
+        //   setIsLoggedIn(false);
+        //   setRole("");
+        // }
+        setIsLoggedIn(true);
+        setRole(data.role);
       } catch (err) {
         setIsLoggedIn(false);
         setRole("");
