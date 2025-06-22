@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://stayfinder-d8vb.onrender.com/auth/check-auth", {
+        const res = await fetch("https://stayfinder-d8vb.onrender.com/check-auth", {
           credentials: "include",
         });
         const data = await res.json();
