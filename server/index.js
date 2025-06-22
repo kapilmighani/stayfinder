@@ -22,7 +22,7 @@ mongoose
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://stayfine.netlify.app"
+    "https://stayfinder-git-main-kapils-projects-ca7fa6bc.vercel.app"
   ],
   credentials: true
 }));
