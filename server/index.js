@@ -21,6 +21,7 @@ mongoose
 
 app.use(cors({
   origin: [
+    "http://localhost:5173",
     "https://stayfine.netlify.app"
   ],
   credentials: true
