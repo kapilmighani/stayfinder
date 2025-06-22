@@ -8,7 +8,6 @@ function Booking() {
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(1);
   const navigate = useNavigate();
-
   useEffect(() => {
     fetch(`https://stayfinder-d8vb.onrender.com/listing/${listingId}`)
       .then((res) => res.json())
