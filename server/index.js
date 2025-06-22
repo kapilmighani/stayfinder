@@ -19,11 +19,12 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://stayfine.netlify.app");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
+app.use(cors({
+  origin: [
+    "https://stayfine.netlify.app"
+  ],
+  credentials: true
+}));
 
 app.use(express.json({ limit: "50kb" }));
 app.use(express.urlencoded({ extended: true, limit: "50kb" }));
