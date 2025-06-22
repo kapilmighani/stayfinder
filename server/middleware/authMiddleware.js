@@ -3,7 +3,7 @@ dotenv.config();
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = "yourSuperSecretJWTkey123";
 
 export const isAuthenticated = async (req, res, next) => {
   try {
