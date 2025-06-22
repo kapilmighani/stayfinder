@@ -9,16 +9,10 @@ import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import listingRoutes from "./routes/listingRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
-import errorHandler from "./middleware/errorhandler.js"
+import errorHandler from "./middleware/errorhandler.js";
 
 const app = express();
 const mongourl = process.env.MONGODB_URI;
-
-mongoose
-  .connect(mongourl)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("MongoDB Error:", err));
-
 app.use(
   cors({
     origin: [
@@ -28,6 +22,11 @@ app.use(
     credentials: true,
   })
 );
+
+mongoose
+  .connect(mongourl)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("MongoDB Error:", err));
 
 
 app.use(express.json({ limit: "50kb" }));
