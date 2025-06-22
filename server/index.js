@@ -13,21 +13,17 @@ import errorHandler from "./middleware/errorhandler.js";
 
 const app = express();
 const mongourl = process.env.MONGODB_URI;
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://stayfine.netlify.app"
-    ],
-    credentials: true,
-  })
-);
 
 mongoose
   .connect(mongourl)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://stayfine.netlify.app");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 app.use(express.json({ limit: "50kb" }));
 app.use(express.urlencoded({ extended: true, limit: "50kb" }));
