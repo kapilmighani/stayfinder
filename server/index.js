@@ -19,12 +19,20 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://stayfinder-3n7ullccm-kapils-projects-ca7fa6bc.vercel.app",
+  "https://stayfinder-git-main-kapils-projects-ca7fa6bc.vercel.app"
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://stayfinder-3n7ullccm-kapils-projects-ca7fa6bc.vercel.app/",
-    "https://stayfinder-git-main-kapils-projects-ca7fa6bc.vercel.app"
-  ],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
