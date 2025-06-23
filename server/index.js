@@ -23,8 +23,7 @@ mongoose
 // ✅ Allow Frontends
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://stayfinder-3n7ullccm-kapils-projects-ca7fa6bc.vercel.app",
-  "https://stayfinder-git-main-kapils-projects-ca7fa6bc.vercel.app"
+  "https://stayfinder-ivory.vercel.app/"
 ];
 
 // ✅ Enable CORS with credentials
